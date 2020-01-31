@@ -2,7 +2,7 @@
 
 UNDER DEVELOPMENT
 
-Normalize Json features to standard GeoJson
+Normalize Json features to standard GeoJson. Check the standard [RFC](https://tools.ietf.org/html/rfc7946).
 
 ## Install
 

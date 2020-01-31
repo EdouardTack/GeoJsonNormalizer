@@ -1,0 +1,44 @@
+{
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "extends": [
+        "eslint:recommended"
+    ],
+    "rules": {
+      "indent": ["error", 4],
+      "comma-spacing": [
+        2,
+        {
+          "before": false,
+          "after": true
+        }
+      ],
+      "linebreak-style": ["error", "windows"],
+      "quotes": ["error", "single"],
+      "semi": ["error", "always"],
+      "object-curly-spacing": ["error", "always"],
+      "eol-last": 2,
+      "curly": 2,
+      "keyword-spacing": 2,
+      "key-spacing": [
+        2,
+        {
+          "beforeColon": false,
+          "afterColon": true
+        }
+      ],
+      "lines-between-class-members": 2,
+      "eqeqeq": 1,
+      "prefer-const": 2,
+      "no-multi-spaces": 2,
+      "no-mixed-spaces-and-tabs": 2,
+      "no-redeclare": 2,
+      "no-console": 1,
+      "no-var": 2,
+      "no-unused-vars": 2,
+      "no-undef": 0,
+      "yoda": 2
+    }
+}

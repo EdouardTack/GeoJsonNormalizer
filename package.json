@@ -4,6 +4,8 @@
   "description": "Normalize JSON features to standard GeoJson",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint index.js ./test/",
+    "fix": "eslint index.js ./test/ --fix",
     "test": "mocha"
   },
   "repository": {

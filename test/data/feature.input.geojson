@@ -1,0 +1,10 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [48.390279, -4.486291]
+  },
+  "properties": {
+    "name": "Brest"
+  }
+}
