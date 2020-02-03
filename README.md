@@ -1,7 +1,5 @@
 # GeoJson Normalizer
 
-UNDER DEVELOPMENT
-
 Normalize Json object to standard GeoJson. Check the standard [RFC](https://tools.ietf.org/html/rfc7946).
 
 ## Install
