@@ -1,4 +1,4 @@
-# GeoJson Normalizer
+# GeoJson Normalizer [![Build Status](https://travis-ci.org/EdouardTack/GeoJsonNormalizer.svg?branch=master)](https://travis-ci.org/EdouardTack/GeoJsonNormalizer)
 
 Normalize Json object to standard GeoJson. Check the standard [RFC](https://tools.ietf.org/html/rfc7946).
 
