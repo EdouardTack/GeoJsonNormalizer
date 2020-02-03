@@ -1,4 +1,5 @@
 const { standardGeoJson, normalizeFeatures } = require('./featureCollection');
+const { standardGeometryCollection, normalizeGeometries } = require('./geometryCollection');
 const { standardFeature, normalizeFeature } = require('./feature');
 
 /**
@@ -21,6 +22,14 @@ const normalizeGeoJson = (geoJson) => {
             standardGeoJson,
             {
                 features: normalizeFeatures(geoJson.features)
+            }
+        );
+    } else if (geoJson.type === 'GeometryCollection') {
+        return Object.assign(
+            {},
+            standardGeometryCollection,
+            {
+                geometries: normalizeGeometries(geoJson.features || geoJson.geometries)
             }
         );
     } else {

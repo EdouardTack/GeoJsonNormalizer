@@ -27,6 +27,24 @@ describe('test GeoJson "FeatureCollection"', () => {
 });
 
 /**
+ * Test a GeometryCollection
+ */
+describe('test GeoJson "GeometryCollection"', () => {
+    it('should be null', () => {
+        const unValidFeatureCollection = { type: 'geometrycollection', features: [] };
+        assert.equal(normalizer(unValidFeatureCollection), null);
+    });
+
+    it('should be a valid GeometryCollection', () => {
+        testFixtures('geometrycollection');
+    });
+
+    it('should be a valid GeometryCollection instead of features uses', () => {
+        testFixtures('geometrycollectionfeatures', 'geometrycollection');
+    });
+});
+
+/**
  * Test a feature object
  */
 describe('test GeoJson "Feature"', () => {
@@ -62,5 +80,14 @@ describe('test GeoJson "Geometry"', () => {
 describe('test GeoJson "FeatureCollection" with Geometry instead of Feature', () => {
     it('should be a valid FeatureCollection', () => {
         testFixtures('featurecollectionwithgeometry', 'featurecollection');
+    })
+});
+
+/**
+ * Test a GeometryCollection with Geometry instead of Feature in geometries array
+ */
+describe('test GeoJson "GeometryCollection" with Feature instead of Geometry', () => {
+    it('should be a valid GeometryCollection', () => {
+        testFixtures('geometrycollectionwithfeature', 'geometrycollection');
     })
 });
