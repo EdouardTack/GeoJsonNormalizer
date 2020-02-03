@@ -1,6 +1,7 @@
 const { normalizeFeature } = require('./feature');
 
 /**
+ * Skeleton of standard Feature Collection
  * @param {Object}
  */
 const standardGeoJson = {
@@ -9,6 +10,7 @@ const standardGeoJson = {
 };
 
 /**
+ * Normalize Fetures
  * @param {Array} features
  * @return {Array}
  */

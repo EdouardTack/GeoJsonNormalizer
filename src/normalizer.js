@@ -3,6 +3,8 @@ const { standardGeometryCollection, normalizeGeometries } = require('./geometryC
 const { standardFeature, normalizeFeature } = require('./feature');
 
 /**
+ * Normalize Json object to geoJson
+ * Check `type` and dispatch to right code
  * @param {Object} geoJson
  */
 const normalizeGeoJson = (geoJson) => {

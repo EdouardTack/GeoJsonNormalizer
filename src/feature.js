@@ -1,6 +1,7 @@
 const { normalizeGeometry } = require('./geometry');
 
 /**
+ * Skeleton of standard Feature
  * @param {Object}
  */
 const standardFeature = {
@@ -10,6 +11,7 @@ const standardFeature = {
 };
 
 /**
+ * Normalize Feature object
  * @param {Object} feature
  * @return {Object}
  */

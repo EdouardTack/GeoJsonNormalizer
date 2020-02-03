@@ -1,6 +1,7 @@
 const { normalizeGeometry } = require('./geometry');
 
 /**
+ * Skeleton of standard Geometry Collection
  * @param {Object}
  */
 const standardGeometryCollection = {
@@ -9,6 +10,7 @@ const standardGeometryCollection = {
 };
 
 /**
+ * Normalize Geometries
  * @param {Object} geometries
  * @return {Object}
  */

@@ -1,4 +1,5 @@
 /**
+ * Skeleton of standard geometry
  * @param {Object}
  * @return {Object}
  */
@@ -8,6 +9,7 @@ const standardGeometry = {
 };
 
 /**
+ * Normalize Geometry object
  * @param {Object} geometry
  * @return {Object}
  */

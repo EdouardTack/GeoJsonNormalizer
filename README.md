@@ -2,15 +2,94 @@
 
 UNDER DEVELOPMENT
 
-Normalize Json features to standard GeoJson. Check the standard [RFC](https://tools.ietf.org/html/rfc7946).
+Normalize Json object to standard GeoJson. Check the standard [RFC](https://tools.ietf.org/html/rfc7946).
 
 ## Install
 
---------
+`npm install geojson-normalizer --save`
 
 ## Usage
 
---------
+You have to import/require the library like this.
+
+```javascript
+// import usage
+import normalizer from 'geojson-normalizer';
+// OR
+// require usage
+const normalizer = require('geojson-normalizer');
+```
+
+Example with a Feature object
+
+```javascript
+const feature = {
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [48.390279, -4.486291]
+  },
+  "properties": {
+    "name": "Brest"
+  }
+}
+
+const collection = normalizer(feature);
+/**
+ * `collection` will output =>
+ * {
+ *      "type": "FeatureCollection",
+ *    	"features": [
+ *    		{
+ *    			"type": "Feature",
+ *    			"geometry": {
+ *    				"type": "Point",
+ *    				"coordinates": [
+ *    					48.390279,
+ *    					-4.486291
+ *    				]
+ *    			},
+ *    			"properties": {
+ *    				"name": "Brest"
+ *    			}
+ *    		}
+ *    	]
+ * }
+ */
+```
+
+Example with a Geometry object
+```javascript
+const geometry = {
+  "type": "Point",
+  "coordinates": [48.390279, -4.486291]
+};
+
+const collection = normalizer(feature);
+/**
+ * `collection` will output =>
+ * {
+ *    	"type": "FeatureCollection",
+ *    	"features": [
+ *    		{
+ *    			"type": "Feature",
+ *    			"properties": {},
+ *    			"geometry": {
+ *    				"type": "Point",
+ *    				"coordinates": [
+ *    					48.390279,
+ *    					-4.486291
+ *    				]
+ *    			}
+ *    		}
+ *    	]
+ * }
+ */
+```
+
+## Developpment
+
+This library use `eslint` for Code style and `mocha` for tests. Use `npm run lint` or `npm run fix` to check CS. To run unit tests, use `npm test` command.
 
 ## LICENCE
 

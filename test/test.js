@@ -80,7 +80,7 @@ describe('test GeoJson "Geometry"', () => {
 describe('test GeoJson "FeatureCollection" with Geometry instead of Feature', () => {
     it('should be a valid FeatureCollection', () => {
         testFixtures('featurecollectionwithgeometry', 'featurecollection');
-    })
+    });
 });
 
 /**
@@ -89,5 +89,5 @@ describe('test GeoJson "FeatureCollection" with Geometry instead of Feature', ()
 describe('test GeoJson "GeometryCollection" with Feature instead of Geometry', () => {
     it('should be a valid GeometryCollection', () => {
         testFixtures('geometrycollectionwithfeature', 'geometrycollection');
-    })
+    });
 });
