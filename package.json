@@ -1,7 +1,7 @@
 {
   "name": "geojson-normalizer",
-  "version": "0.1.0",
-  "description": "Normalize JSON features to standard GeoJson",
+  "version": "0.1.1",
+  "description": "Normalize JSON features or geometry object to standard GeoJson",
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js ./test/",

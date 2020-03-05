@@ -1,10 +1,10 @@
 # GeoJson Normalizer [![Build Status](https://travis-ci.org/EdouardTack/GeoJsonNormalizer.svg?branch=master)](https://travis-ci.org/EdouardTack/GeoJsonNormalizer)
 
-Normalize Json object to standard GeoJson. Check the standard [RFC](https://tools.ietf.org/html/rfc7946).
+Normalize Json object or Geometry object to standard GeoJson object. Check the standard [RFC](https://tools.ietf.org/html/rfc7946).
 
 ## Install
 
-`npm install geojson-normalizer --save`
+`npm install geojson-normalizer --save` or `yarn add geojson-normalizer`
 
 ## Usage
 
@@ -21,6 +21,8 @@ const normalizer = require('geojson-normalizer');
 Example with a Feature object
 
 ```javascript
+import normalizer from 'geojson-normalizer';
+
 const feature = {
   "type": "Feature",
   "geometry": {
@@ -30,57 +32,55 @@ const feature = {
   "properties": {
     "name": "Brest"
   }
-}
-
-const collection = normalizer(feature);
-/**
- * `collection` will output =>
- * {
- *      "type": "FeatureCollection",
- *    	"features": [
- *    		{
- *    			"type": "Feature",
- *    			"geometry": {
- *    				"type": "Point",
- *    				"coordinates": [
- *    					48.390279,
- *    					-4.486291
- *    				]
- *    			},
- *    			"properties": {
- *    				"name": "Brest"
- *    			}
- *    		}
- *    	]
- * }
- */
-```
-
-Example with a Geometry object
-```javascript
-const geometry = {
-  "type": "Point",
-  "coordinates": [48.390279, -4.486291]
 };
 
 const collection = normalizer(feature);
 /**
  * `collection` will output =>
  * {
- *    	"type": "FeatureCollection",
- *    	"features": [
- *    		{
- *    			"type": "Feature",
- *    			"properties": {},
- *    			"geometry": {
- *    				"type": "Point",
- *    				"coordinates": [
- *    					48.390279,
- *    					-4.486291
- *    				]
- *    			}
- *    		}
- *    	]
+ *   "type": "FeatureCollection",
+ *   "features": [{
+ *     "type": "Feature",
+ *     "geometry": {
+ *       "type": "Point",
+ *       "coordinates": [
+ *         48.390279,
+ *         -4.486291
+ *       ]
+ *     },
+ *     "properties": {
+ *       "name": "Brest"
+ *     }
+ *   }]
+ * }
+ */
+```
+
+Example with a Geometry object
+```javascript
+import normalizer from 'geojson-normalizer';
+
+const geometry = {
+  "type": "Point",
+  "coordinates": [48.390279, -4.486291]
+};
+
+const collection = normalizer(geometry);
+/**
+ * `collection` will output =>
+ * {
+ *   "type": "FeatureCollection",
+ *   "features": [{
+ *     "type": "Feature",
+ *     "properties": {},
+ *     "geometry": {
+ *       "type": "Point",
+ *       "coordinates": [
+ *         48.390279,
+ *         -4.486291
+ *       ]
+ *     }
+ *   }]
  * }
  */
 ```
